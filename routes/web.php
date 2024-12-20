@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
@@ -19,9 +20,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-});
+Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
+    ->prefix('admin')
+    ->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+        Route::post('/makeAdmin/{id}', [AdminController::class, 'makeAdmin'])->name('admin.makeAdmin');
+        Route::patch('/removeAdmin/{id}', [AdminController::class, 'removeAdmin'])->name('admin.removeAdmin');
+        Route::delete('/delUser/{id}', [AdminController::class, 'delUser'])->name('admin.delUser');
+    });
 
 
 require __DIR__.'/auth.php';

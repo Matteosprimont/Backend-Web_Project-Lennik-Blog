@@ -1,0 +1,147 @@
+.container {
+    padding-top: 12px;
+}
+
+.container2 {
+    max-width: 7xl;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.gebruikers-tabel {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.tabel-kop {
+    background-color: lightgray;
+}
+
+.cel {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabel-rij:nth-child(even) {
+    background-color: snow;
+}
+
+.tabel-cel {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.promoveer-knop, .verwijder-knop, .verwijder-admin-knop {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.promoveer-knop {
+    background-color: royalblue;
+}
+
+.promoveer-knop:hover {
+    background-color: dodgerblue;
+}
+
+.verwijder-knop {
+    background-color: red;
+}
+
+.verwijder-knop:hover {
+    background-color: firebrick;
+}
+
+.verwijder-admin-knop {
+    background-color: red; 
+}
+
+.verwijder-admin-knop:hover {
+    background-color: firebrick; 
+}
+
+.admin-status {
+    color: mediumseagreen; 
+}
+
+.geen-admin-status {
+    color: red; 
+}
+
+.titel {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.tabel-container {
+    background-color: white;
+    padding: 24px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container2 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+}
+
+.popup-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirm-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: mediumseagreen;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-button:hover, .cancel-button:hover {
+    opacity: 0.8;
+}
