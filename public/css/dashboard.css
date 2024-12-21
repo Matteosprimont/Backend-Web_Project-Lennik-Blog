@@ -1,0 +1,134 @@
+.sectie-dashboard {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.container-dashboard {
+    max-width: 112rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welkom-blok {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.welkom-tekst {
+    padding: 1.5rem;
+    color: black; 
+}
+
+.titel-dashboard {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.beschrijving-dashboard {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: black; 
+}
+
+.nieuws-blok {
+    background-color: white; 
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nieuws-tekst {
+    padding: 1.5rem;
+    color: black; 
+}
+
+.titel-nieuws {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black; 
+}
+
+.beschrijving-nieuws {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: black; 
+}
+
+.categorie-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.categorie-blok {
+    background-color: white; 
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+.categorie-tekst {
+    padding: 1.5rem;
+    color: black; 
+}
+
+.titel-categorie {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: black; 
+}
+
+.beschrijving-categorie {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: black; 
+}
+
+.nieuws-lijst {
+    list-style: none;
+    padding: 0;
+}
+
+.nieuws-item {
+    border-bottom: 1px solid lightgray; 
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.nieuws-titel {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black; 
+}
+
+.nieuws-datum {
+    font-size: 0.875rem;
+    color: gray;
+}
+
+.nieuws-afbeelding {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.nieuws-content {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: black; 
+}
+
+.lees-meer-link {
+    color: dodgerblue; 
+    text-decoration: underline;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+    

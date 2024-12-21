@@ -1,0 +1,94 @@
+.content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.article {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: darkslategray; 
+    margin-bottom: 20px;
+}
+
+.article-date {
+    font-size: 1rem;
+    color: gray; 
+    margin-bottom: 20px;
+}
+
+.article-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: dimgray; 
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: darkslategray; 
+    margin-bottom: 20px;
+}
+
+.article-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-actions a, .article-actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.article-actions a {
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    border: 1px solid blue;
+    font-weight: 600;
+}
+
+.article-actions a:hover {
+    background-color: blue;
+    border-color: blue;
+}
+
+.article-actions .btn-delete {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    font-weight: 600;
+}
+
+.article-actions .btn-delete:hover {
+    background-color: red;
+    border-color: red;
+}
