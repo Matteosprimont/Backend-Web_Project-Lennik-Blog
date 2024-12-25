@@ -7,6 +7,7 @@ use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
@@ -40,6 +41,8 @@ Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
         Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy'); 
     });
 
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact');
+    Route::post('/contact', [ContactController::class, 'submitForm']);
 
     Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 
