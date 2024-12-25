@@ -12,9 +12,26 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    @auth
+                        @if (Auth::user()->is_admin)
+                            <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Home') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('admin.news.form')" :active="request()->routeIs('admin.news.form')">
+                                {{ __('Nieuws Aanmaken') }}
+                            </x-nav-link>
+                        @else
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                                {{ __('Contact') }}
+                            </x-nav-link>
+                        @endif
+                    @endauth
                 </div>
             </div>
 
