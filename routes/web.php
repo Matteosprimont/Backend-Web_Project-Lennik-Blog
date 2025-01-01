@@ -3,8 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\IsAdmin;
-use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
@@ -55,5 +53,12 @@ Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
         Route::post('/admin/faq/category', [FaqController::class, 'storeCategory'])->name('faq.category.store');
         Route::get('/admin/faq/question/create', [FaqController::class, 'createQuestion'])->name('faq.question.create');
         Route::post('/admin/faq/question', [FaqController::class, 'storeQuestion'])->name('faq.question.store');
+        Route::get('/faq/edit', [FaqController::class, 'editFaq'])->name('faq.edit');
+        Route::get('/faq/edit/category/{id}', [FaqController::class, 'editCategory'])->name('faq.category.edit');
+        Route::patch('/faq/category/{id}', [FaqController::class, 'updateCategory'])->name('faq.category.update');
+        Route::patch('/faq/question/{id}', [FaqController::class, 'updateQuestion'])->name('faq.question.update');
+        Route::delete('/faq/category/{id}', [FaqController::class, 'deleteCategory'])->name('faq.category.delete');
+        Route::delete('/faq/question/{id}', [FaqController::class, 'deleteQuestion'])->name('faq.question.delete');
     });
+
 require __DIR__.'/auth.php';

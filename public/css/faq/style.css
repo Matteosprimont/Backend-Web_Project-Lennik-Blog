@@ -87,3 +87,79 @@
 .blok4.verborgen {
     display: none;
 }
+.faq-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px lightgray;
+}
+
+.block1 {
+    margin-bottom: 15px;
+}
+
+.knop1 {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 18px;
+    text-align: left;
+    background-color: lightblue;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.knop1:hover {
+    background-color: blue;
+    color: white;
+}
+
+.button1, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.button2 {
+    padding: 10px;
+    background-color: lightgreen;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: green;
+    color: white;
+}
+
+.divider {
+    margin: 20px 0;
+    border: 1px solid lightgray;
+}
+.delete-button {
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: red;
+    color: white;
+}
