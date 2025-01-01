@@ -1,12 +1,29 @@
 .sectie-dashboard {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: calc(100vh - 4rem); 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: whitesmoke; 
 }
 
 .container-dashboard {
-    max-width: 112rem;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 .welkom-blok {
@@ -131,4 +148,82 @@
     margin-top: 10px;
     cursor: pointer;
 }
-    
+.container-dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.rechter-container {
+    width: 30%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.zoekbalk-container {
+    margin-bottom: 20px;
+}
+
+.zoekbalk {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.zoekbalk:focus {
+    border-color: dodgerblue;
+}
+
+.gebruikers-lijst-container {
+    margin-top: 20px;
+}
+
+.titel-gebruikers {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gebruikers-lijst {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gebruiker-item {
+    padding: 12px;
+    border-bottom: 1px solid lightgray;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gebruiker-item:last-child {
+    border-bottom: none;
+}
+
+.gebruiker-item:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container-dashboard {
+        flex-direction: column;
+    }
+
+    .rechter-container {
+        width: 100%;
+    }
+}
