@@ -1,19 +1,41 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="faq-title">FAQ</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('FAQ Overzicht') }}
+        </h2>
     </x-slot>
-    <link href="{{ asset('css/faq/faq.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/faq/style.css') }}" rel="stylesheet">
     <div class="faq-container">
         @foreach($categories as $category)
-            <h3 class="category-title">{{ $category->name }}</h3>
-            <ul class="category-list">
-                @foreach($category->questions as $question)
-                    <li class="category-item">
-                        <strong class="faq-question">{{ $question->question }}</strong><br>
-                        <span class="faq-answer">{{ $question->answer }}</span>
-                    </li>
-                @endforeach
-            </ul>
+            <div class="blok1">
+                <button class="knop1" onclick="toggleVragen(this)">
+                    {{ $category->name }}
+                </button>
+                <div class="blok2 gesloten">
+                    @foreach($category->questions as $question)
+                        <div class="blok3">
+                            <button class="knop2" onclick="toggleAntwoord(this)">
+                                {{ $question->question }}
+                            </button>
+                            <div class="blok4 verborgen">
+                                {{ $question->answer }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         @endforeach
     </div>
 </x-app-layout>
+
+<script>
+    function toggleVragen(button) {
+        const vragen = button.nextElementSibling;
+        vragen.classList.toggle('gesloten');
+    }
+
+    function toggleAntwoord(button) {
+        const antwoord = button.nextElementSibling;
+        antwoord.classList.toggle('verborgen');
+    }
+</script>
