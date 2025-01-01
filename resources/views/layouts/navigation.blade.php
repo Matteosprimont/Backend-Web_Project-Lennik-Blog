@@ -26,9 +26,6 @@
                             <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
                                 {{ __('FAQ') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('faq.category.create')" :active="request()->routeIs('faq.category.create')">
-                                {{ __('FAQ Categorie Aanmaken') }}
-                            </x-nav-link>
                             <x-nav-link :href="route('faq.question.create')" :active="request()->routeIs('faq.question.create')">
                                 {{ __('FAQ Vraag Aanmaken') }}
                             </x-nav-link>

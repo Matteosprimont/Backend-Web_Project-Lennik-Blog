@@ -43,4 +43,11 @@ class FaqController extends Controller
         FaqVragen::create($request->all());
         return redirect()->route('faq.index')->with('success', 'Vraag toegevoegd.');
     }
+
+    public function manageFaq()
+{
+    $categories = FaqCategory::all();
+    return view('faq.question', compact('categories'));
+}
+
 }
