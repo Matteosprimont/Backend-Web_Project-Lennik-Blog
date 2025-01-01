@@ -23,12 +23,24 @@
                             <x-nav-link :href="route('admin.news.form')" :active="request()->routeIs('admin.news.form')">
                                 {{ __('Nieuws Aanmaken') }}
                             </x-nav-link>
+                            <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
+                                {{ __('FAQ') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('faq.category.create')" :active="request()->routeIs('faq.category.create')">
+                                {{ __('FAQ Categorie Aanmaken') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('faq.question.create')" :active="request()->routeIs('faq.question.create')">
+                                {{ __('FAQ Vraag Aanmaken') }}
+                            </x-nav-link>
                         @else
                             <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                                 {{ __('Dashboard') }}
                             </x-nav-link>
                             <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                                 {{ __('Contact') }}
+                            </x-nav-link>
+                            <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
+                                {{ __('FAQ') }}
                             </x-nav-link>
                         @endif
                     @endauth
