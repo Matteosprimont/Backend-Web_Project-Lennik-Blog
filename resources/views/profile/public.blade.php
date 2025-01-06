@@ -8,7 +8,6 @@
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 
     <div class="profile-container">
-        <!-- Linker Sectie -->
         <div class="profile-left">
             @if ($user->profile_photo)
                 <img src="{{ asset('storage/' . $user->profile_photo) }}" alt="{{ $user->name }}" class="profile-photo">
@@ -20,7 +19,6 @@
             <p class="user-birthday">Geboortedatum: {{ $user->birthday ?? 'Niet opgegeven' }}</p>
         </div>
 
-        <!-- Rechter Sectie -->
         <div class="profile-right">
             <h3 class="about-title">Over Mij</h3>
             <p class="about-text">

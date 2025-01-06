@@ -1,23 +1,24 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('FAQ Overzicht') }}
-        </h2>
+        <h2 class="faq-title">{{ __('Veelgestelde Vragen') }}</h2>
     </x-slot>
-    <link href="{{ asset('css/faq/style.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/faq/faq1.css') }}" rel="stylesheet">
+
     <div class="faq-container">
+        <p class="faq-intro">{{ __('Heb je een vraag? Vind hier de antwoorden op de meest gestelde vragen!') }}</p>
         @foreach($categories as $category)
-            <div class="blok1">
-                <button class="knop1" onclick="toggleVragen(this)">
+            <div class="faq-block">
+                <button class="faq-category-button" onclick="toggleCategory(this)">
                     {{ $category->name }}
                 </button>
-                <div class="blok2 gesloten">
+                <div class="faq-questions hidden">
                     @foreach($category->questions as $question)
-                        <div class="blok3">
-                            <button class="knop2" onclick="toggleAntwoord(this)">
+                        <div class="faq-question-block">
+                            <button class="faq-question-button" onclick="toggleAnswer(this)">
                                 {{ $question->question }}
                             </button>
-                            <div class="blok4 verborgen">
+                            <div class="faq-answer hidden">
                                 {{ $question->answer }}
                             </div>
                         </div>
@@ -29,13 +30,13 @@
 </x-app-layout>
 
 <script>
-    function toggleVragen(button) {
-        const vragen = button.nextElementSibling;
-        vragen.classList.toggle('gesloten');
+    function toggleCategory(button) {
+        const questions = button.nextElementSibling;
+        questions.classList.toggle('hidden');
     }
 
-    function toggleAntwoord(button) {
-        const antwoord = button.nextElementSibling;
-        antwoord.classList.toggle('verborgen');
+    function toggleAnswer(button) {
+        const answer = button.nextElementSibling;
+        answer.classList.toggle('hidden');
     }
 </script>
