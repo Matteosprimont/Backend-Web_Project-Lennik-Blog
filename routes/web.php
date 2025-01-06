@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -39,7 +40,10 @@ Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
         Route::get('/news/{news}/edit', [NewsController::class, 'edit'])->name('admin.news.edit'); 
         Route::patch('/news/{news}', [NewsController::class, 'update'])->name('admin.news.update'); 
         Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy'); 
+
+
     });
+Route::get('/profile/{id}', [UserProfileController::class, 'show'])->name('profile.public');
 
     Route::get('/contact', [ContactController::class, 'showForm'])->name('contact');
     Route::post('/contact', [ContactController::class, 'submitForm']);

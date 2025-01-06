@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.profile-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+.profile-left {
+    width: 35%;
+    background-color: rgb(240, 248, 255); /* Lichte blauwachtige kleur */
+    padding: 20px;
+    text-align: center;
+    border-right: 2px solid lightgray;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(33, 33, 33);
+}
+
+.user-email {
+    font-size: 1rem;
+    color: gray;
+    margin: 10px 0;
+}
+
+.user-birthday {
+    font-size: 1rem;
+    color: rgb(66, 66, 66);
+}
+
+.profile-right {
+    width: 65%;
+    padding: 20px;
+}
+
+.about-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgb(0, 102, 204);
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+    line-height: 1.5;
+}

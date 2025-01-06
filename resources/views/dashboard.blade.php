@@ -52,10 +52,11 @@
                 <div class="gebruikers-lijst-container">
                     <h3 class="titel-gebruikers">{{ __('Lijst van Gebruikers') }}</h3>
                     <ul id="gebruikers-lijst" class="gebruikers-lijst">
-                        @foreach ($users as $user)
-                            <li class="gebruiker-item">{{ $user->name }} ({{ $user->email }})</li>
-                        @endforeach
-                    </ul>
+                    @foreach ($users as $user)
+        <li class="gebruiker-item">
+            <a href="{{ route('profile.public', $user->id) }}">{{ $user->name }} ({{ $user->email }})</a>
+        </li>
+    @endforeach
                 </div>
             </div>
         </div>
