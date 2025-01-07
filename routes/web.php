@@ -40,7 +40,9 @@ Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
         Route::get('/news/{news}/edit', [NewsController::class, 'edit'])->name('admin.news.edit'); 
         Route::patch('/news/{news}', [NewsController::class, 'update'])->name('admin.news.update'); 
         Route::delete('/news/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy'); 
-
+        Route::get('/admin/create-user', [AdminController::class, 'createUserForm'])->name('admin.user.create');
+        Route::post('/admin/create-user', [AdminController::class, 'storeUser'])->name('admin.user.store');
+        
 
     });
 Route::get('/profile/{id}', [UserProfileController::class, 'show'])->name('profile.public');
