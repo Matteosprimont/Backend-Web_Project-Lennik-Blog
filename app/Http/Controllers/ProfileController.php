@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -95,4 +96,10 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     } 
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id); 
+        return view('profile.public', compact('user'));
+    }
 }

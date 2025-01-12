@@ -52,6 +52,9 @@ Route::get('/profile/{id}', [UserProfileController::class, 'show'])->name('profi
 
     Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
     Route::post('/news/{news}/comment', [NewsController::class, 'storeComment'])->name('news.comment.store');
+    Route::post('/comments/{id}/reply', [NewsController::class, 'replyToComment'])->name('comments.reply');
+    Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/public/{id}', [ProfileController::class, 'show'])->name('profile.public');
 
 
     Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');

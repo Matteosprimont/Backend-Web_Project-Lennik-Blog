@@ -114,4 +114,22 @@ class NewsController extends Controller
         return back()->with('success', 'Comment toegevoegd!');
     }
 
+    public function replyToComment(Request $request, $id)
+{
+    $request->validate([
+        'content' => 'required|string|max:500',
+    ]);
+
+    $comment = Comment::findOrFail($id);
+
+    Comment::create([
+        'user_id' => \Illuminate\Support\Facades\Auth::user()->id,
+        'news_id' => $comment->news_id,
+        'content' => $request->content,
+        'parent_id' => $comment->id,
+    ]);
+
+    return back()->with('success', 'Reactie geplaatst.');
+}
+
 }

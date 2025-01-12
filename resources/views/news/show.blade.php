@@ -31,26 +31,51 @@
                 @endif
             </div>
             <div class="comments-section">
-                <h3 class="comments-title">{{ __('Comments') }}</h3>
-                <form action="{{ route('news.comment.store', $news->id) }}" method="POST" class="comment-form">
-                    @csrf
-                    <textarea name="content" rows="2" placeholder="{{ __('Type je comment hier...') }}" required></textarea>
-                    <button type="submit">{{ __('Comment') }}</button>
-                </form>
-                <ul class="comments-list">
-                    @forelse ($news->comments as $comment)
-                        <li class="comment-item">
-                            <div class="comment-header">
-                                <span class="comment-user">{{ $comment->user->name }}</span>
-                                <span class="comment-date">{{ $comment->created_at->format('d-m-Y H:i') }}</span>
+            <h3 class="comments-title">Comments</h3>
+            <ul class="comments-list">
+                @foreach ($news->comments->where('parent_id', null) as $comment)
+                    <li class="comment-item">
+                        <div class="comment-header">
+                            <a href="{{ route('profile.show', $comment->user->id) }}" class="comment-user">
+                                {{ $comment->user->name }}
+                            </a>
+                            <span class="comment-date">{{ $comment->created_at->diffForHumans() }}</span>
+                        </div>
+                        <div class="comment-content">
+                            {{ $comment->content }}
+                        </div>
+                        <div class="comment-actions">
+                            <button onclick="toggleReplyForm('{{ $comment->id }}')">Reply</button>
+                        </div>
+
+                        <form method="POST" action="{{ route('comments.reply', $comment->id) }}" class="reply-form" id="reply-form-{{ $comment->id }}" style="display:none;">
+                            @csrf
+                            <textarea name="content" placeholder="Type your reply here..." rows="2"></textarea>
+                            <button type="submit">Reply</button>
+                        </form>
+
+                        @foreach ($comment->replies as $reply)
+                            <div class="comment-item nested">
+                                <div class="comment-header">
+                                    <a href="{{ route('profile.show', $reply->user->id) }}" class="comment-user">
+                                        {{ $reply->user->name }}
+                                    </a>
+                                    <span class="comment-date">{{ $reply->created_at->diffForHumans() }}</span>
+                                </div>
+                                <div class="comment-content">
+                                    {{ $reply->content }}
+                                </div>
                             </div>
-                            <div class="comment-content">{{ $comment->content }}</div>
-                        </li>
-                    @empty
-                        <p>{{ __('Geen comments beschikbaar.') }}</p>
-                    @endforelse
-                </ul>
-            </div>
+                        @endforeach
+                    </li>
+                @endforeach
+            </ul>
         </div>
-    </div>
+
+        <script>
+            function toggleReplyForm(commentId) {
+                const form = document.getElementById(`reply-form-${commentId}`);
+                form.style.display = form.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
 </x-app-layout>
