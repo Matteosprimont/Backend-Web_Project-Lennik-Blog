@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
-
+use App\Models\Comment;
 class NewsController extends Controller
 {
     public function showNewsForm()
@@ -98,4 +98,20 @@ class NewsController extends Controller
 
         return redirect()->route('admin.news.form')->with('status', 'Nieuws is verwijderd!');
     }
+
+    public function storeComment(Request $request, $newsId)
+    {
+        $request->validate([
+            'content' => 'required|string|max:1000',
+        ]);
+
+        Comment::create([
+            'news_id' => $newsId,
+            'user_id' => \Illuminate\Support\Facades\Auth::user()->id,
+            'content' => $request->content,
+        ]);
+
+        return back()->with('success', 'Comment toegevoegd!');
+    }
+
 }

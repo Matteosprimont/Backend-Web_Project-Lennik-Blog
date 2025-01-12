@@ -8,7 +8,6 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserProfileController;
-
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
@@ -49,8 +48,11 @@ Route::get('/profile/{id}', [UserProfileController::class, 'show'])->name('profi
 
     Route::get('/contact', [ContactController::class, 'showForm'])->name('contact');
     Route::post('/contact', [ContactController::class, 'submitForm']);
+    Route::post('/news/{news}/comment', [NewsController::class, 'storeComment'])->name('news.comment');
 
     Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
+    Route::post('/news/{news}/comment', [NewsController::class, 'storeComment'])->name('news.comment.store');
+
 
     Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
