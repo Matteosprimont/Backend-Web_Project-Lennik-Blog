@@ -53,4 +53,20 @@ class User extends Authenticatable
 {
     return $this->belongsToMany(FaqCategory::class, 'admin_faq_category');
 }
+
+public function sentMessages()
+{
+    return $this->hasMany(Message::class, 'sender_id');
+}
+
+public function receivedMessages()
+{
+    return $this->hasMany(Message::class, 'receiver_id');
+}
+
+public function lastMessage()
+{
+    return $this->hasOne(Message::class, 'receiver_id', 'id')->latestOfMany();
+}
+
 }

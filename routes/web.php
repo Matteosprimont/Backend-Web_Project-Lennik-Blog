@@ -8,6 +8,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\ChatController;
+
 Route::get('/', function () {
     return redirect()->route('dashboard');
 });
@@ -44,7 +46,14 @@ Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])
         
 
     });
-Route::get('/profile/{id}', [UserProfileController::class, 'show'])->name('profile.public');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+        Route::post('/chat/send', [ChatController::class, 'send'])->name('chat.send');
+        Route::get('/chat/messages/{user}', [ChatController::class, 'messages'])->name('chat.messages');
+    });
+    
+
 
     Route::get('/contact', [ContactController::class, 'showForm'])->name('contact');
     Route::post('/contact', [ContactController::class, 'submitForm']);

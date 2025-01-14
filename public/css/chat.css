@@ -1,0 +1,166 @@
+.chat-overview {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(black, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.user-list-container {
+    flex: 1;
+    border-right: 1px solid gainsboro;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.user-item.unread {
+    background-color: aliceblue;
+}
+.user-item.unread .last-message {
+    font-weight: bold;
+    color: dodgerblue;
+}
+.user-item:hover {
+    background-color: whitesmoke;
+    border-color: lightgray;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid lightgray;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.user-info a {
+    font-size: 16px;
+    font-weight: bold;
+    color: dimgray;
+    text-decoration: none;
+}
+
+.last-message {
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.last-message .message-time {
+    font-size: 12px;
+    color: lightgray;
+    margin-left: auto;
+    text-align: right;
+}
+
+.chat-page-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(black, 0.1);
+}
+
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.message-sender,
+.message-receiver {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.message-sender {
+    align-self: flex-end;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.message-receiver {
+    align-self: flex-start;
+    background-color: whitesmoke;
+    color: dimgray;
+}
+
+.message-sender::after,
+.message-receiver::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+}
+
+.message-sender::after {
+    right: -10px;
+    border-left: 10px solid dodgerblue;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.message-receiver::after {
+    left: -10px;
+    border-right: 10px solid whitesmoke;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.message-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid gainsboro;
+}
+
+.message-form textarea {
+    flex: 1;
+    resize: none;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.message-form button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+    background-color: royalblue;
+}
