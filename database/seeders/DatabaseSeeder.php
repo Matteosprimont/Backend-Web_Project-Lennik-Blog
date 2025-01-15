@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => bcrypt('Password!321'),
         ]);
 
         User::factory()->create([
@@ -25,6 +26,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@ehb.be',
             'password' => bcrypt('Password!321'),
             'is_admin' => true,
+        ]);
+
+        $this->call([
+            NewsSeeder::class,
+            FaqTableSeeder::class,
         ]);
     }
 }
