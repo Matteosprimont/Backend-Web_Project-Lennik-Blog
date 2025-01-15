@@ -44,6 +44,23 @@
     line-height: 1.6;
     color: dimgray; 
 }
+.article-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.article-content h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.article-content ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+}
 
 .page-title {
     font-size: 2.25rem;
@@ -233,4 +250,23 @@
     margin-top: 5px;
 }
 
-    
+.return-button-wrapper {
+    text-align: right; 
+    margin-bottom: 20px;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: royalblue;
+}

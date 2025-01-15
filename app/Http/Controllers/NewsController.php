@@ -17,7 +17,7 @@ class NewsController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:10240',
         ]);
 
         $news = new News();
