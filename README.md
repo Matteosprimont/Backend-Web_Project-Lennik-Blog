@@ -7,60 +7,80 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Lennik Platform
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Welkom op het Lennik Platform! Dit project biedt een centrale plek voor nieuws, evenementen en community-interacties met betrekking tot de stad Lennik. Het is gebouwd met Laravel en bevat een gebruiksvriendelijke interface en diverse functionaliteiten die bijdragen aan een betrokken gemeenschap.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Functionaliteiten
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Nieuws**: Bekijk nieuwsartikelen, laat reacties achter en deel jouw mening.
+- **Evenementen**: Ontdek geplande activiteiten en blijf op de hoogte van wijzigingen.
+- **Profielbeheer**: Personaliseer je profiel, upload een profielfoto en voeg een "over mij"-sectie toe.
+- **Community**: Interactie via reacties op nieuws en FAQ-vragen.
+- **Contactformulier**: Neem eenvoudig contact op met de admin.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installatie
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Vereisten
+1. PHP >= 8.1
+2. Composer
+3. MySQL of een andere ondersteunde database
+4. Node.js en npm
+5. Laravel CLI
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Stappen
+1. **Repository clonen**:
+   ```bash
+   git clone [repository-url]
+   cd [repository-map]
+2. **Dependencies installeren**:
+   ```bash
+   composer install
+   npm install && npm run dev
+3. **Environment configureren**:Maak een .env-bestand op basis van .env.example:
+   ```bash
+   cp .env.example .env
+4. **Pas de database-instellingen aan:**:
+   ```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=lennik_platform
+    DB_USERNAME=root
+    DB_PASSWORD=
+5. **Database migreren en vullen**:
+   ```bash
+    php artisan migrate:fresh --seed
+6. **Environment configureren**:
+   ```bash
+   php artisan storage:link
+7. **Environment configureren**:
+   ```bash
+    php artisan serve
+## 
 
-## Laravel Sponsors
+Bezoek de website op [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Bronvermelding
 
-### Premium Partners
+- **Laravel Framework**: [https://laravel.com/](https://laravel.com/)
+- **Seeder Content**: Handmatig gegenereerde vragen en antwoorden gebaseerd op gemeentelijke websites.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## Belangrijke Informatie
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Admin Account**  
+  - E-mailadres: `admin@ehb.be`  
+  - Wachtwoord: `Password!321`  
 
-## Code of Conduct
+- **Afbeeldingen**  
+  Standaardafbeeldingen bevinden zich in de map `public/storage`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Licentie
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Dit project is open-sourced software gelicentieerd onder de [MIT-licentie](https://opensource.org/licenses/MIT).
