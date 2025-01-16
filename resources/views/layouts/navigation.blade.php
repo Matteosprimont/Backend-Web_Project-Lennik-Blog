@@ -37,6 +37,9 @@
                             <x-nav-link :href="route('faq.question.create')" :active="request()->routeIs('faq.question.create')">
                                 {{ __('FAQ Vraag Aanmaken') }}
                             </x-nav-link>
+                            <x-nav-link :href="route('faq.edit')" :active="request()->routeIs('faq.edit')">
+                                {{ __('FAQ wijzigen') }}
+                            </x-nav-link>
                         @else
                             <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
                                 {{ __('Chat') }}

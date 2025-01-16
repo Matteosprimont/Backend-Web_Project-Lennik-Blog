@@ -27,3 +27,11 @@ function changeRights(button, actieType) {
 
     popup.classList.remove('hidden');
 }
+function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.add('hidden');
+    } else {
+        console.error(`Popup met ID ${popupId} niet gevonden.`);
+    }
+}
