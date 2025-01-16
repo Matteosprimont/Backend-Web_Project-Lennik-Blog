@@ -22,7 +22,7 @@
 
                 <div class="article-content">{!! $news->content !!}</div>
 
-                @if(auth()->user()->is_admin)
+                @if(auth()->check() && auth()->user()->is_admin)
                     <div class="article-actions">
                         <a href="{{ route('admin.news.edit', $news->id) }}">{{ __('Bewerk Nieuws') }}</a>
                         <form action="{{ route('admin.news.destroy', $news->id) }}" method="POST" style="display:inline;">

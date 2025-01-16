@@ -10,8 +10,19 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
+                        {{ __('FAQ') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
+                <!-- Navigation Links -->
                     @auth
                         @if (Auth::user()->is_admin)
                             <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
@@ -20,30 +31,15 @@
                             <x-nav-link :href="route('admin.user.create')" :active="request()->routeIs('admin.user.create')">
                                 {{ __('User Aanmaken') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                                {{ __('Home') }}
-                            </x-nav-link>
                             <x-nav-link :href="route('admin.news.form')" :active="request()->routeIs('admin.news.form')">
                                 {{ __('Nieuws Aanmaken') }}
-                            </x-nav-link>
-                            <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
-                                {{ __('FAQ') }}
                             </x-nav-link>
                             <x-nav-link :href="route('faq.question.create')" :active="request()->routeIs('faq.question.create')">
                                 {{ __('FAQ Vraag Aanmaken') }}
                             </x-nav-link>
                         @else
-                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-nav-link>
                             <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
                                 {{ __('Chat') }}
-                            </x-nav-link>
-                            <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                                {{ __('Contact') }}
-                            </x-nav-link>
-                            <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
-                                {{ __('FAQ') }}
                             </x-nav-link>
                         @endif
                     @endauth

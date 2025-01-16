@@ -66,7 +66,6 @@ Bezoek de website op [http://127.0.0.1:8000](http://127.0.0.1:8000).
 ## Bronvermelding
 
 - **Laravel Framework**: [https://laravel.com/](https://laravel.com/)
-- **Seeder Content**: Handmatig gegenereerde vragen en antwoorden gebaseerd op gemeentelijke websites.
 
 ---
 
